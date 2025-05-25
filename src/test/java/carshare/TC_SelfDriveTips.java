@@ -10,8 +10,7 @@ public class TC_SelfDriveTips extends BaseTestCase {
 	public void SelfDrive() {
 
 		SelfDrivePage selfDrive = new SelfDrivePage(driver);
-		selfDrive.clickSelfDrive();
-		String title = selfDrive.getTitle();
+		String title = selfDrive.clickAboutUsLink();
 		Assert.assertEquals(title, "Self Drive Tips");
 	}
 }

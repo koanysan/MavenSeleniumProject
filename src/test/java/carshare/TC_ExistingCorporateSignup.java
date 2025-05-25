@@ -11,18 +11,7 @@ public class TC_ExistingCorporateSignup extends BaseTestCase {
 
 		ExistingCorporateSignupPage existingCorporate = new ExistingCorporateSignupPage(driver);
 
-		existingCorporate.clickSignup();
-		existingCorporate.clickExistingCorporateRdoBtn();
-		existingCorporate.clickJoinNow();
-		existingCorporate.selectEnquiryType();
-		existingCorporate.enterCompanyName("Testing");
-		existingCorporate.selectIndustry();
-		existingCorporate.enterContactPerson("Kyaw Kyaw");
-		existingCorporate.enterJobTitle("Banking Staff");
-		existingCorporate.selectExt();
-		existingCorporate.enterPhoneNo("09689999999");
-		existingCorporate.enterEmail("test@gmail.com");
-		existingCorporate.clickSubmitBtn();
+		existingCorporate.corporateRegister("Testing", "Kyaw Kyaw", "Banking Staff", "09689999999", "test@gmail.com");
 
 		String title = existingCorporate.getTitle();
 		Assert.assertEquals(title, "Successful");

@@ -11,15 +11,15 @@ public class TC_FindCar extends BaseTestCase {
 	public void FindCar() {
 
 		FindCarPage onboard = new FindCarPage(driver);
+
 		LocalDate today = LocalDate.now().plusDays(1);
 		DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM d, yyyy");
 		String todaysDate = today.format(formatter);
 		LocalDate nextMonth = LocalDate.now().plusMonths(1);
 		String nextDate = nextMonth.format(formatter);
-		onboard.clickPickLocation();
-		onboard.enterPickupDate(todaysDate);
-		onboard.enterReturnDate(nextDate);
-		onboard.clickFindCarBtn();
+
+		onboard.findCar(todaysDate, nextDate);
+
 	}
 
 }

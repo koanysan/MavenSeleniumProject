@@ -10,28 +10,39 @@ public class TC_NewCorporateSignup extends BaseTestCase {
 	public void Singup() {
 
 		NewCorporateSignupPage newCorporate = new NewCorporateSignupPage(driver);
-		
-		newCorporate.clickSignup();
-		newCorporate.clickNewCorporateRdoBtn();
-		newCorporate.clickJoinNow();
-		newCorporate.selectEnquiryType();
-		newCorporate.enterCompanyName("Testing");
-		newCorporate.selectIndustry();
-		newCorporate.enterContactPerson("Kyaw Kyaw");
-		newCorporate.enterJobTitle("Banking Staff");
-		newCorporate.selectExt();
-		newCorporate.enterPhoneNo("09689999999");
-		newCorporate.enterEmail("test@gmail.com");
-		newCorporate.clickSubmitBtn();
+
+//		newCorporate.clickSignup();
+//		newCorporate.clickNewCorporateRdoBtn();
+//		newCorporate.clickJoinNow();
+//		newCorporate.selectEnquiryType();
+//		newCorporate.enterCompanyName("Testing");
+//		newCorporate.selectIndustry();
+//		newCorporate.enterContactPerson("Kyaw Kyaw");
+//		newCorporate.enterJobTitle("Banking Staff");
+//		newCorporate.selectExt();
+//		newCorporate.enterPhoneNo("09689999999");
+//		newCorporate.enterEmail("test@gmail.com");
+//		newCorporate.clickSubmitBtn();
+//
+//		String title = newCorporate.getTitle();
+//		Assert.assertEquals(title, "Successful");
+//		
+//		String content = newCorporate.getSuccessContent();
+//		Assert.assertEquals(content, "Thank you for your interest in Yoma Car Share services. Our Key Account team will contact you shortly to assist you with your inquiry.");
+//	
+//		newCorporate.clickOkBtn();		
+
+		newCorporate.corporateRegister("Testing", "Kyaw Kyaw", "Banking Staff", "09689999999", "test@gmail.com");
 
 		String title = newCorporate.getTitle();
 		Assert.assertEquals(title, "Successful");
-		
+
 		String content = newCorporate.getSuccessContent();
-		Assert.assertEquals(content, "Thank you for your interest in Yoma Car Share services. Our Key Account team will contact you shortly to assist you with your inquiry.");
-	
-		newCorporate.clickOkBtn();		
-	
+		Assert.assertEquals(content,
+				"Thank you for your interest in Yoma Car Share services. Our Key Account team will contact you shortly to assist you with your inquiry.");
+
+		newCorporate.clickOkBtn();
+
 	}
 
 }
