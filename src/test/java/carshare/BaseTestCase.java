@@ -1,19 +1,21 @@
 package carshare;
 
+import utils.DriverManager;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeTest;
+import org.testng.annotations.Optional;
+import org.testng.annotations.Parameters;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.BeforeMethod;
-import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.WebDriver;
 
 public class BaseTestCase {
 
-	public ChromeDriver driver;
+	public WebDriver driver;
 
 	@BeforeMethod
 	public void beforeMethod() {
@@ -26,24 +28,17 @@ public class BaseTestCase {
 	@BeforeSuite
 	public void beforeSuite() {
 	}
-	
+
+	@Parameters("browser")
 	@BeforeClass
-	public void beforeClass() {
-		System.setProperty("webdriver.chrome.driver",
-				"C:\\Users\\DELL\\Downloads\\chromedriver-win64\\chromedriver.exe");
-		
-		ChromeOptions options = new ChromeOptions();
-        options.setExperimentalOption("excludeSwitches", new String[]{"enable-automation"});
-        options.setExperimentalOption("useAutomationExtension", false);
-				
-		driver = new ChromeDriver(options);
-		driver.manage().window().maximize();
-		driver.get("https://carshare.yomafleet.com");
+	public void setUp(@Optional("chrome") String browser) {
+
+		driver = DriverManager.getDriver(browser);
 	}
 
 	@AfterClass
 	public void afterClass() {
-		driver.quit();
+		DriverManager.quitDriver();
 	}
 
 	@AfterSuite
@@ -52,17 +47,12 @@ public class BaseTestCase {
 
 	@BeforeTest
 	public void beforeTest() {
-		
+
 	}
 
 	@AfterTest
 	public void afterTest() {
-		
+
 	}
 
-	
-
-	
-
 }
-

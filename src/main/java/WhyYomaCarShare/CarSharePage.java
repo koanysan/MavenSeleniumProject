@@ -2,16 +2,17 @@ package WhyYomaCarShare;
 
 import Common.CommonPage;
 import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class CarSharePage extends CommonPage {
 
-	public CarSharePage(ChromeDriver dvr) {
+	public CarSharePage(WebDriver dvr) {
 		driver = dvr;
 		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		PageFactory.initElements(driver, this);

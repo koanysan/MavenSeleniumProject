@@ -2,6 +2,8 @@ package HowCarShareWork;
 
 import Common.CommonPage;
 import java.time.Duration;
+
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -11,7 +13,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class HowCarShareWorkPage extends CommonPage {
 
-	public HowCarShareWorkPage(ChromeDriver dvr) {
+	public HowCarShareWorkPage(WebDriver dvr) {
 		driver = dvr;
 		wait = new WebDriverWait(driver, Duration.ofSeconds(20));
 		PageFactory.initElements(driver, this);
