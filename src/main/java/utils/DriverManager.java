@@ -10,7 +10,7 @@ public class DriverManager {
 
 	// Step 2: Private constructor to prevent external instantiation
 	private DriverManager() {
-		// Optional: setup can go here if needed
+
 	}
 
 	// Step 3: Public static method to return the same instance
