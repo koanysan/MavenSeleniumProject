@@ -9,6 +9,7 @@ public class TC_StarterPack extends BaseTestCase {
 	public void AboutUs() {
 		StarterPackPage about = new StarterPackPage(driver);
 		String title = about.clickStartPackLink();
+		
 		Assert.assertEquals(title, "Starter Pack");
 	}
 }
