@@ -9,6 +9,7 @@
 			<class name="carshare.TC_WhyCarShare" />
 			<class name="carshare.TC_SelfDriveTips" />
 			<class name="carshare.TC_WhyCarShare" />
+			<class name="carshare.TC_StarterPack" />
 		</classes>
 	</test>
 </suite>
